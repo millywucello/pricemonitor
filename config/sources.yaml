@@ -1,0 +1,51 @@
+providers:
+  binance:
+    kind: binance
+    settings: {}
+  tradingview:
+    kind: tradingview
+    settings: {}
+  interactive_brokers:
+    kind: interactive_brokers
+    settings:
+      host: 127.0.0.1
+      port: 7497
+      client_id: 1
+
+instruments:
+  - symbol: BTCUSDT
+    asset_class: crypto
+    provider: binance
+    base: BTC
+    quote: USDT
+    name: Bitcoin
+  - symbol: ETHUSDT
+    asset_class: crypto
+    provider: binance
+    base: ETH
+    quote: USDT
+    name: Ethereum
+  - symbol: SOLUSDT
+    asset_class: crypto
+    provider: binance
+    base: SOL
+    quote: USDT
+    name: Solana
+  - symbol: BNBUSDT
+    asset_class: crypto
+    provider: binance
+    base: BNB
+    quote: USDT
+    name: BNB
+  - symbol: XAUUSD
+    asset_class: metal
+    provider: tradingview
+    name: Gold
+  - symbol: XAGUSD
+    asset_class: metal
+    provider: tradingview
+    name: Silver
+  - symbol: AAPL
+    asset_class: equity
+    provider: interactive_brokers
+    name: Apple Inc.

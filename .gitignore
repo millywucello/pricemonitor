@@ -8,3 +8,14 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Local data/output
+data/
+.uv-cache/
+
+# Editor/IDE
+.idea/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/

@@ -1,0 +1,22 @@
+schedules:
+  - symbol: BTCUSDT
+    provider: binance
+    interval_seconds: 1
+  - symbol: ETHUSDT
+    provider: binance
+    interval_seconds: 1
+  - symbol: SOLUSDT
+    provider: binance
+    interval_seconds: 1
+  - symbol: BNBUSDT
+    provider: binance
+    interval_seconds: 1
+  - symbol: XAUUSD
+    provider: tradingview
+    interval_seconds: 60
+  - symbol: XAGUSD
+    provider: tradingview
+    interval_seconds: 60
+  - symbol: AAPL
+    provider: interactive_brokers
+    interval_seconds: 60

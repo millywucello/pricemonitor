@@ -32,6 +32,12 @@ config/
 ## Dependencies (when you wire it up)
 - `PyYAML` for loading config
 - `FastAPI` for the web API
+- `Uvicorn` for serving the API
+
+## Run the API (local)
+```bash
+PYTHONPATH=src uv run uvicorn pricemonitor.app.main:app --reload
+```
 
 ## Next steps
 - Implement provider adapters with proper rate-limits.

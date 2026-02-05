@@ -39,7 +39,12 @@ config/
 PYTHONPATH=src uv run uvicorn pricemonitor.app.main:app --reload
 ```
 
+## Run the polling scheduler (local)
+```bash
+PYTHONPATH=src uv run pricemonitor-run
+```
+
 ## Next steps
-- Implement provider adapters with proper rate-limits.
-- Add scheduler bootstrap to start polling from config.
+- Implement TradingView and Interactive Brokers adapters.
+- Add backoff/rate-limit handling and retries.
 - Add historical queries and analytics.

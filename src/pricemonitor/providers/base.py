@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime
 from typing import Iterable, Protocol
 
 from pricemonitor.models.instruments import Instrument
@@ -17,9 +18,23 @@ class ProviderCapabilities:
     supports_historical: bool = False
 
 
+@dataclass(frozen=True)
+class HistoryQuery:
+    symbol: str
+    interval: str
+    start: datetime | None = None
+    end: datetime | None = None
+
+
 class Provider(Protocol):
     name: str
     capabilities: ProviderCapabilities
+
+    async def get_latest_price(self, symbol: str) -> Quote:
+        """Fetch the latest quote for a provider-native symbol."""
+
+    async def get_history(self, query: HistoryQuery) -> list[Quote]:
+        """Fetch historical quotes for a provider-native symbol."""
 
     async def fetch_quote(self, instrument: Instrument) -> Quote:
         """Fetch a single quote for an instrument."""
